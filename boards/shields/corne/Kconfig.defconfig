@@ -1,0 +1,45 @@
+if SHIELD_CORNE_DONGLE
+
+config ZMK_KEYBOARD_NAME
+    default "Corne"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SPLIT
+    default y
+
+#config ZMK_USB
+#    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 2
+
+# Set this to ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS + your desired number of BT profiles (default is 5)
+config BT_MAX_CONN
+    default 7
+
+# Set this to the same number as BT_MAX_CONN
+config BT_MAX_PAIRED
+    default 7
+
+endif
+
+
+if LVGL
+
+config LV_Z_VDB_SIZE
+    default 100
+
+config LV_DPI_DEF
+    default 261
+
+config LV_Z_BITS_PER_PIXEL
+    default 16
+
+choice LV_COLOR_DEPTH
+    default LV_COLOR_DEPTH_16
+endchoice
+
+endif # LVGL
+
